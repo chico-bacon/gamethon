@@ -55,13 +55,13 @@ def consultar_jogos(database, nome='', categoria='' ,plataforma='', ano=''):
 #Função para atualizar registro do jogo
 def atualizar_jogo(database, index ,nome=False, categoria=False ,plataforma=False, ano= False):
    if index <= 0 and index <= len(database) - 1:
-    if nome:
+    if nome == True:
         database[index]['nome'] = input('Atualizar nome: ')
-    elif categoria:
+    elif categoria == True:
         database[index]['categoria'] = input('Atualizar categoria: ')
-    elif plataforma:
+    elif plataforma == True:
         database[index]['plataforma'] = input('Atualizar plataforma: ')
-    elif ano:
+    elif ano == True:
         database[index]['ano'] = input('Lançamento atualizado: ')
     else:
         database[index]['nome'] = input('Atualizar nome: ')

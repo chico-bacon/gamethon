@@ -1,6 +1,6 @@
 #Projeto Curso Logica de Programação -- Catálogo de Jogos
 from crud_clientes import consultar_clientes, cadastrar_cliente
-from crud_games import adicionar_jogo, consultar_jogos, remover_jogo
+from crud_games import adicionar_jogo, consultar_jogos, remover_jogo, atualizar_jogo
   
 jogo_catalogo = []
 clientes_lista = []
@@ -80,9 +80,28 @@ while opt != 10:
 * ATUALIZANDO REGISTROS (JOGO)*
 *******************************    
 ''')
-        user_opt = 0:
-        while opt != 6:
-           print('''[ 1 ] Atualizar registro completo\n[ 2 ] Atualizar ''')
+        user_opt = 0
+        while user_opt != 6:
+           print('''[ 1 ] Atualizar registro completo\n[ 2 ] Atualizar apenas nome\n[ 3 ] Atualizar apenas categoria\n[ 4 ]Atualizar apenas ano de lançamento\n[ 5 ] Atualizar apenas plataforma\n[ 6 ] Sair\n''')
+           user_opt = int(input('Digite a opcao: '))
+           match user_opt:
+              case 1:
+                 index = int(input("Digite o indice do jogo(caso necessário volte no menu principal e use a funcao consultar jogos): "))
+                 atualizar_jogo(jogo_catalogo, index)
+              case 2:
+                 index = int(input("Digite o indice do jogo(caso necessário volte no menu principal e use a funcao consultar jogos): "))
+                 atualizar_jogo(jogo_catalogo, index, nome=True)
+              case 3:
+                 index = int(input("Digite o indice do jogo(caso necessário volte no menu principal e use a funcao consultar jogos): "))
+                 atualizar_jogo(jogo_catalogo, index, categoria=True)
+              case 4:
+                 index = int(input("Digite o indice do jogo(caso necessário volte no menu principal e use a funcao consultar jogos): "))
+                 atualizar_jogo(jogo_catalogo, index, ano=True)
+              case 5:
+                 index = int(input("Digite o indice do jogo(caso necessário volte no menu principal e use a funcao consultar jogos): "))
+                 atualizar_jogo(jogo_catalogo, index, plataforma=True)
+
+
     case 8:
       print('''
 **************************
